@@ -283,6 +283,14 @@ function startGame() {
             );
         }
     );
+
+    // Apply current theme to card backs
+    document.querySelectorAll(
+        ".card-front"
+    ).forEach(front => {
+        front.style.backgroundImage =
+            `url("${cardBack()}")`;
+    });
 }
 
 
