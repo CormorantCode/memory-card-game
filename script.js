@@ -57,32 +57,11 @@ const cardBack = () =>
     `${imageFolder()}${currentTheme}-00-cardback.png`;
 
 const boardConfigs = {
-
-    "3x4": {
-        cols: 3,
-        rows: 4,
-        className: "board-3x4"
-    },
-
-    "4x4": {
-        cols: 4,
-        rows: 4,
-        className: "board-4x4"
-    },
-
-    "4x5": {
-        cols: 4,
-        rows: 5,
-        className: "board-4x5"
-    },
-
-    "4x6": {
-        cols: 4,
-        rows: 6,
-        className: "board-4x6"
-    }
+    "3x4": { cols: 3, rows: 4, className: "board-3x4", previewDuration: 2500 },
+    "4x4": { cols: 4, rows: 4, className: "board-4x4", previewDuration: 3000 },
+    "4x5": { cols: 4, rows: 5, className: "board-4x5", previewDuration: 3500 },
+    "4x6": { cols: 4, rows: 6, className: "board-4x6", previewDuration: 4000 },
 };
-
 
 // --------------------
 // GAME STATE
@@ -176,6 +155,29 @@ function shuffle(array) {
     return array;
 }
 
+function previewCards() {
+    lockBoard = true;
+
+    // Flip all cards face-up
+    document.querySelectorAll(".card").forEach(card => {
+        card.classList.add("flipped");
+    });
+
+    const duration = boardConfigs[currentDifficulty].previewDuration;
+
+    setTimeout(() => {
+        // Flip them all back
+        document.querySelectorAll(".card").forEach(card => {
+            card.classList.remove("flipped");
+        });
+
+        // Short delay after flip-back animation before unlocking
+        setTimeout(() => {
+            lockBoard = false;
+        }, 500);
+    }, duration);
+}
+
 function startGame() {
 
     stopTimer();
@@ -193,7 +195,6 @@ function startGame() {
 
     firstCard = null;
     secondCard = null;
-    lockBoard = false;
 
     winModal.classList.add(
         "hidden"
@@ -291,6 +292,8 @@ function startGame() {
         front.style.backgroundImage =
             `url("${cardBack()}")`;
     });
+
+    previewCards();
 }
 
 
