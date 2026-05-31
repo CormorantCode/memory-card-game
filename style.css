@@ -142,11 +142,6 @@ h1 {
 
 /* ---------- BOARD SIZES ---------- */
 
-.board-3x4 .card {
-    width: 150px;
-    height: 150px;
-}
-
 .board-4x4 .card {
     width: 130px;
     height: 130px;
@@ -162,17 +157,17 @@ h1 {
     height: 105px;
 }
 
+.board-5x6 .card {
+    width: 85px;
+    height: 85px;
+}
+
 /* ---------- MOBILE ---------- */
 
 @media (max-width: 700px) {
 
     body {
         padding: 12px;
-    }
-
-    .board-3x4 .card {
-        width: 88px;
-        height: 88px;
     }
 
     .board-4x4 .card {
@@ -188,6 +183,11 @@ h1 {
     .board-4x6 .card {
         width: 66px;
         height: 66px;
+    }
+
+    .board-5x6 .card {
+        width: 54px;
+        height: 54px;
     }
 
     .stats {

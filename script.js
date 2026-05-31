@@ -23,11 +23,6 @@ const difficultyButtons =
         ".difficulty-button"
     );
 
-const winMessage =
-    document.getElementById(
-        "win-message"
-    );
-
 const winModal =
     document.getElementById(
         "win-modal"
@@ -57,10 +52,10 @@ const cardBack = () =>
     `${imageFolder()}${currentTheme}-00-cardback.png`;
 
 const boardConfigs = {
-    "3x4": { cols: 3, rows: 4, className: "board-3x4", previewDuration: 2500 },
-    "4x4": { cols: 4, rows: 4, className: "board-4x4", previewDuration: 3000 },
-    "4x5": { cols: 4, rows: 5, className: "board-4x5", previewDuration: 3500 },
-    "4x6": { cols: 4, rows: 6, className: "board-4x6", previewDuration: 4000 },
+    "4x4": { cols: 4, rows: 4, className: "board-4x4", previewDuration: 1500 },
+    "4x5": { cols: 4, rows: 5, className: "board-4x5", previewDuration: 2500 },
+    "4x6": { cols: 4, rows: 6, className: "board-4x6", previewDuration: 3000 },
+    "5x6": { cols: 5, rows: 6, className: "board-5x6", previewDuration: 3500 },
 };
 
 // --------------------
@@ -68,7 +63,7 @@ const boardConfigs = {
 // --------------------
 
 let currentDifficulty =
-    "3x4";
+    "4x4";
 
 let firstCard = null;
 let secondCard = null;
@@ -462,35 +457,8 @@ const themeSelect =
 themeSelect.addEventListener(
     "change",
     () => {
-        currentTheme =
-            themeSelect.value;
-
-        // Swap card fronts
-        document.querySelectorAll(
-            ".card"
-        ).forEach(card => {
-            const index =
-                card.dataset.image
-                    .match(/\d+(?=\.png)/)[0];
-
-            const newImage =
-                `${imageFolder()}${currentTheme}-${index}.png`;
-
-            card.dataset.image =
-                newImage;
-
-            card.querySelector(
-                ".card-back img"
-            ).src = newImage;
-        });
-
-        // Swap card backs
-        document.querySelectorAll(
-            ".card-front"
-        ).forEach(front => {
-            front.style.backgroundImage =
-                `url("${cardBack()}")`;
-        });
+        currentTheme = themeSelect.value;
+        startGame();
     }
 );
 
