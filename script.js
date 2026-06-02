@@ -54,8 +54,8 @@ const cardBack = () =>
 const boardConfigs = {
     "4x4": { cols: 4, rows: 4, className: "board-4x4", previewDuration: 1500 },
     "4x5": { cols: 4, rows: 5, className: "board-4x5", previewDuration: 2500 },
-    "4x6": { cols: 4, rows: 6, className: "board-4x6", previewDuration: 3000 },
-    "5x6": { cols: 5, rows: 6, className: "board-5x6", previewDuration: 3500 },
+    "4x6": { cols: 4, rows: 6, className: "board-4x6", previewDuration: 2500 },
+    "5x6": { cols: 5, rows: 6, className: "board-5x6", previewDuration: 2800 },
 };
 
 // --------------------
