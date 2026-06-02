@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f3f4f6;
+    background: #eef2f3;
     margin: 0;
     padding: 20px;
     display: flex;
@@ -28,7 +28,7 @@ h1 {
 
 #restart-button,
 .difficulty-button {
-    background: #7874b4;
+    background: #156082;
     color: white;
     border: none;
     border-radius: 10px;
@@ -44,7 +44,7 @@ h1 {
 }
 
 #theme-select {
-    background: #7874b4;
+    background: #156082;
     color: white;
     border: none;
     border-radius: 10px;
