@@ -24,40 +24,53 @@
 
         <div class="controls">
 
-            <button
-                id="restart-button">
-                Restart
-            </button>
+            <!-- Grid Size Picker -->
+            <div class="picker-wrapper" id="size-picker-wrapper">
+                <button class="picker-trigger" id="size-trigger">
+                    Grid: 4×4 ▾
+                </button>
+                <div class="picker-panel hidden" id="size-panel">
+                    <div class="size-grid">
+                        <button class="size-option selected" data-size="4x4"
+                            data-cols="4" data-rows="4">4×4</button>
+                        <button class="size-option" data-size="4x5"
+                            data-cols="4" data-rows="5">4×5</button>
+                        <button class="size-option" data-size="4x6"
+                            data-cols="4" data-rows="6">4×6</button>
+                        <button class="size-option" data-size="5x6"
+                            data-cols="5" data-rows="6">5×6</button>
+                    </div>
+                    <!-- Dot grid preview -->
+                    <div class="dot-grid-preview" id="dot-grid-preview"></div>
+                </div>
+            </div>
 
-            <button
-                class="difficulty-button"
-                data-size="4x4">
-                4x4
-            </button>
+            <!-- Deck Picker -->
+            <div class="picker-wrapper" id="theme-picker-wrapper">
+                <button class="picker-trigger" id="theme-trigger">
+                    Deck: Origami ▾
+                </button>
+                <div class="picker-panel hidden" id="theme-panel">
+                    <div class="theme-swatches">
+                        <div class="theme-swatch selected" data-theme="origami">
+                            <img src="images/origami/origami-00-cardback.png" alt="Origami">
+                            <span>Origami</span>
+                        </div>
+                        <div class="theme-swatch" data-theme="flowers">
+                            <img src="images/flowers/flowers-00-cardback.png" alt="Flowers">
+                            <span>Flowers</span>
+                        </div>
+                        <div class="theme-swatch" data-theme="shapes">
+                            <img src="images/shapes/shapes-00-cardback.png" alt="Shapes">
+                            <span>Shapes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <button
-                class="difficulty-button"
-                data-size="4x5">
-                4x5
+            <button id="new-game-button">
+                Start Game
             </button>
-
-            <button
-                class="difficulty-button"
-                data-size="4x6">
-                4x6
-            </button>
-
-            <button
-                class="difficulty-button"
-                data-size="5x6">
-                5x6
-            </button>
-
-            <select id="theme-select">
-                <option value="origami">Origami</option>
-                <option value="flowers">Flowers</option>
-                <option value="shapes">Shapes</option>
-            </select>
 
         </div>
 

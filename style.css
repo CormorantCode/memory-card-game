@@ -26,8 +26,7 @@ h1 {
     margin-bottom: 18px;
 }
 
-#restart-button,
-.difficulty-button {
+#new-game-button {
     background: #156082;
     color: white;
     border: none;
@@ -38,12 +37,17 @@ h1 {
     transition: opacity 0.2s;
 }
 
-#restart-button:hover,
-.difficulty-button:hover {
+#new-game-button:hover {
     opacity: 0.9;
 }
 
-#theme-select {
+/* ---------- CUSTOM PICKERS ---------- */
+
+.picker-wrapper {
+    position: relative;
+}
+
+.picker-trigger {
     background: #156082;
     color: white;
     border: none;
@@ -52,10 +56,115 @@ h1 {
     font-size: 16px;
     cursor: pointer;
     transition: opacity 0.2s;
+    white-space: nowrap;
 }
 
-#theme-select:hover {
+.picker-trigger:hover {
     opacity: 0.9;
+}
+
+.picker-panel {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    padding: 12px;
+    z-index: 100;
+    min-width: 160px;
+}
+
+/* --- Size panel --- */
+
+.size-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.size-option {
+    background: #f1f5f9;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.size-option:hover {
+    background: #dbeafe;
+    border-color: #156082;
+}
+
+.size-option.selected {
+    background: #156082;
+    color: white;
+    border-color: #156082;
+}
+
+.dot-grid-preview {
+    display: grid;
+    gap: 4px;
+    padding: 8px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.dot-cell {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    background: #cbd5e1;
+    transition: background 0.1s;
+}
+
+/* --- Theme panel --- */
+
+.theme-swatches {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.theme-swatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.theme-swatch:hover {
+    background: #dbeafe;
+    border-color: #156082;
+}
+
+.theme-swatch.selected {
+    border-color: #156082;
+    background: #eff6ff;
+}
+
+.theme-swatch img {
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.theme-swatch span {
+    font-size: 12px;
+    color: #334155;
+    font-weight: 600;
 }
 
 .stats {
